@@ -11,7 +11,7 @@ import pandas as pd
 import re
 from datetime import datetime
 
-# 一次撈取八卦版、表特版、股票版、python版、資料科學版
+# 撈取八卦版、表特版、股票版、python版、資料科學版
 gossiping_url = "https://www.ptt.cc/bbs/Gossiping/index.html"
 beauty_url = "https://www.ptt.cc/bbs/Beauty/index.html"
 stock_url = "https://www.ptt.cc/bbs/Stock/index.html"
@@ -24,6 +24,8 @@ urls = [gossiping_url, beauty_url, stock_url, python_url, dataSci_url]
 cookies = {"over18": "1"}
 
 ptt_articleInfo = []
+
+# set program start time
 now = datetime.now()
 current_time = now.strftime("%H:%M:%S")
 print("Start Time =", current_time)
@@ -73,7 +75,8 @@ for j in range(len(urls)):
             start_page = start_page + 1
         else:
             print("Failed to retrieve webpage")
-            
+ 
+# set program end time
 end = datetime.now()
 end_time = end.strftime("%H:%M:%S")
 print("End Time =", end_time)
